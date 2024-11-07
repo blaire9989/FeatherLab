@@ -16,3 +16,5 @@ Fast wave simulation: please see tutorial for building [here](https://github.com
 BRDF generation pipeline: please see description [here](https://github.com/blaire9989/FeatherLab/blob/main/(3)-BRDF/README.md).
 
 Reference simulation: please see tutorial [here](https://github.com/blaire9989/FeatherLab/blob/main/(4)-FullWave/README.md), while keeping in mind that these simulations are slow.
+
+For questions or collaborations, please contact the authors at yy735@cornell.edu.

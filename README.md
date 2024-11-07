@@ -10,6 +10,9 @@ This repository is organized with four sub-directories, containing code written 
 The guidelines for using code from each stage of our appearance modeling are listed below, and can be found in the respective sub-directories:
 
 Procedural geometric modeling: please see description [here](https://github.com/blaire9989/FeatherLab/blob/main/(1)-Geometry/README.md).
+
 Fast wave simulation: please see tutorial for building [here](https://github.com/blaire9989/FeatherLab/blob/main/(2)-FastSim/README.md).
+
 BRDF generation pipeline: please see description [here](https://github.com/blaire9989/FeatherLab/blob/main/(3)-BRDF/README.md).
+
 Reference simulation: please see tutorial [here](https://github.com/blaire9989/FeatherLab/blob/main/(4)-FullWave/README.md), while keeping in mind that these simulations are slow.

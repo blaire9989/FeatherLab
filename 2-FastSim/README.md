@@ -16,3 +16,13 @@ Our wave simulation program takes the following command line arguments:
 $\texttt{-a}$: Specifies the $\theta_i$ parameter that describes the incident direction (see our paper for the definition of $\theta_i$). In our framework, **this parameter must be an integer between 1 and 20**, and we have $\cos \theta_i = 0.05a$.
 
 $\texttt{-b}$: Specifies the $\phi_i$ parameter that describes the incident direction (see our paper for the definition of $\phi_i$). Here, **this parameter must be an integer between 1 and 20**, and we have $\cos \phi_i = 0.05b$.
+
+$\texttt{-i}$: Specifies the type of barbule. 1: rock dove barbules; 2: European starling barbules; 3: bronzewing barbules; 4: hummingbird barbules; 5: mallard barbules; 6: magpie barbules; 7: peacock barbules.
+
+$\texttt{-l}$: Selects the simulated wavelength. **This argument is passed as an integer, with 50 possible values: 400, 406, 412, ..., 688, 694**, representing wavelengths in nanometers. 
+
+$\texttt{-n}$: The number of instances simulated for each type barbule. We usually simulate 50 instances at a time.
+
+$\texttt{-v}$: A binary argument with the value of 0 or 1. When $v=0$, we are in the "material characterizing mode" and our output files will contain BRDF parameters (as described in our paper) used for rendering. When $v=1$, we are in the trial mode, and our output files can be processed to generate some example scattering patterns (see below).
+
+$\texttt{-z}$: The name of the simulated barbule, which needs to match the name of a subfolder in some $\texttt{dataX}$ folder. One example barbule name is $\texttt{rockdove1Forest}$.

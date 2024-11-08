@@ -5,6 +5,7 @@ name = "starling1Aqua";
 mkdir("data2/" + name);
 mkdir("data2/" + name + "/geometry");
 mkdir("data2/" + name + "/render");
+mkdir("data2/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = starling(25.0, 4.0, 0.300, 0.250, 0.03);
     writematrix(xyvals, "data2/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -18,6 +19,7 @@ name = "starling2Green";
 mkdir("data2/" + name);
 mkdir("data2/" + name + "/geometry");
 mkdir("data2/" + name + "/render");
+mkdir("data2/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = starling(25.0, 4.0, 0.320, 0.250, 0.03);
     writematrix(xyvals, "data2/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -31,6 +33,7 @@ name = "starling3Yellow";
 mkdir("data2/" + name);
 mkdir("data2/" + name + "/geometry");
 mkdir("data2/" + name + "/render");
+mkdir("data2/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = starling(25.0, 4.0, 0.340, 0.250, 0.03);
     writematrix(xyvals, "data2/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -44,6 +47,7 @@ name = "starling4Peach";
 mkdir("data2/" + name);
 mkdir("data2/" + name + "/geometry");
 mkdir("data2/" + name + "/render");
+mkdir("data2/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = starling(25.0, 4.0, 0.360, 0.250, 0.03);
     writematrix(xyvals, "data2/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -57,6 +61,7 @@ name = "starling5Pink";
 mkdir("data2/" + name);
 mkdir("data2/" + name + "/geometry");
 mkdir("data2/" + name + "/render");
+mkdir("data2/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = starling(25.0, 4.0, 0.380, 0.250, 0.03);
     writematrix(xyvals, "data2/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -70,6 +75,7 @@ name = "starling6Purple";
 mkdir("data2/" + name);
 mkdir("data2/" + name + "/geometry");
 mkdir("data2/" + name + "/render");
+mkdir("data2/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = starling(25.0, 4.0, 0.400, 0.250, 0.03);
     writematrix(xyvals, "data2/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -83,6 +89,7 @@ name = "starling7Lavender";
 mkdir("data2/" + name);
 mkdir("data2/" + name + "/geometry");
 mkdir("data2/" + name + "/render");
+mkdir("data2/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = starling(25.0, 4.0, 0.420, 0.250, 0.03);
     writematrix(xyvals, "data2/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -96,6 +103,7 @@ name = "starling8Teal";
 mkdir("data2/" + name);
 mkdir("data2/" + name + "/geometry");
 mkdir("data2/" + name + "/render");
+mkdir("data2/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = starling(25.0, 4.0, 0.440, 0.250, 0.03);
     writematrix(xyvals, "data2/" + name + "/geometry/xyvals" + num2str(n) + ".txt");

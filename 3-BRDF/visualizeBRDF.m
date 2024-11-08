@@ -21,7 +21,6 @@ function visualizeBRDF(type, name, dim, nExample, resolution, D65)
     end
     
     % Output images
-    mkdir("data" + num2str(type) + "/" + name + "/visual");
     for n = 0 : nExample
         collage = [brdf{n + 1, 1} brdf{n + 1, 5} brdf{n + 1, 9};
                    brdf{n + 1, 2} brdf{n + 1, 6} brdf{n + 1, 10};

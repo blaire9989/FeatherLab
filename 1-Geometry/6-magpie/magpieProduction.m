@@ -6,6 +6,7 @@ mkdir("data6/" + name);
 mkdir("data6/" + name + "/coefs");
 mkdir("data6/" + name + "/geometry");
 mkdir("data6/" + name + "/render");
+mkdir("data6/" + name + "/visual");
 for i = 400 : 6 : 694
     coef = readmatrix("coef1Forest/coef" + num2str(i) + ".txt");
     id = fopen("data6/" + name + "/coefs/wvl" + num2str(i) + ".binary", 'w');
@@ -27,6 +28,7 @@ mkdir("data6/" + name);
 mkdir("data6/" + name + "/coefs");
 mkdir("data6/" + name + "/geometry");
 mkdir("data6/" + name + "/render");
+mkdir("data6/" + name + "/visual");
 for i = 400 : 6 : 694
     coef = readmatrix("coef2Lime/coef" + num2str(i) + ".txt");
     id = fopen("data6/" + name + "/coefs/wvl" + num2str(i) + ".binary", 'w');
@@ -48,6 +50,7 @@ mkdir("data6/" + name);
 mkdir("data6/" + name + "/coefs");
 mkdir("data6/" + name + "/geometry");
 mkdir("data6/" + name + "/render");
+mkdir("data6/" + name + "/visual");
 for i = 400 : 6 : 694
     coef = readmatrix("coef3Yellow/coef" + num2str(i) + ".txt");
     id = fopen("data6/" + name + "/coefs/wvl" + num2str(i) + ".binary", 'w');
@@ -69,6 +72,7 @@ mkdir("data6/" + name);
 mkdir("data6/" + name + "/coefs");
 mkdir("data6/" + name + "/geometry");
 mkdir("data6/" + name + "/render");
+mkdir("data6/" + name + "/visual");
 for i = 400 : 6 : 694
     coef = readmatrix("coef4Rose/coef" + num2str(i) + ".txt");
     id = fopen("data6/" + name + "/coefs/wvl" + num2str(i) + ".binary", 'w');
@@ -90,6 +94,7 @@ mkdir("data6/" + name);
 mkdir("data6/" + name + "/coefs");
 mkdir("data6/" + name + "/geometry");
 mkdir("data6/" + name + "/render");
+mkdir("data6/" + name + "/visual");
 for i = 400 : 6 : 694
     coef = readmatrix("coef5Purple/coef" + num2str(i) + ".txt");
     id = fopen("data6/" + name + "/coefs/wvl" + num2str(i) + ".binary", 'w');
@@ -111,6 +116,7 @@ mkdir("data6/" + name);
 mkdir("data6/" + name + "/coefs");
 mkdir("data6/" + name + "/geometry");
 mkdir("data6/" + name + "/render");
+mkdir("data6/" + name + "/visual");
 for i = 400 : 6 : 694
     coef = readmatrix("coef6Violet/coef" + num2str(i) + ".txt");
     id = fopen("data6/" + name + "/coefs/wvl" + num2str(i) + ".binary", 'w');
@@ -132,6 +138,7 @@ mkdir("data6/" + name);
 mkdir("data6/" + name + "/coefs");
 mkdir("data6/" + name + "/geometry");
 mkdir("data6/" + name + "/render");
+mkdir("data6/" + name + "/visual");
 for i = 400 : 6 : 694
     coef = readmatrix("coef7Blue/coef" + num2str(i) + ".txt");
     id = fopen("data6/" + name + "/coefs/wvl" + num2str(i) + ".binary", 'w');
@@ -153,6 +160,7 @@ mkdir("data6/" + name);
 mkdir("data6/" + name + "/coefs");
 mkdir("data6/" + name + "/geometry");
 mkdir("data6/" + name + "/render");
+mkdir("data6/" + name + "/visual");
 for i = 400 : 6 : 694
     coef = readmatrix("coef8Teal/coef" + num2str(i) + ".txt");
     id = fopen("data6/" + name + "/coefs/wvl" + num2str(i) + ".binary", 'w');

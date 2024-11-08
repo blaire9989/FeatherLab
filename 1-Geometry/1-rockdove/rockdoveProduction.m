@@ -5,6 +5,7 @@ name = "rockdove1Forest";
 mkdir("data1/" + name);
 mkdir("data1/" + name + "/geometry");
 mkdir("data1/" + name + "/render");
+mkdir("data1/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = rockdove(20.0, 4.0, 0.595, 0.03);
     writematrix(xyvals, "data1/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -18,6 +19,7 @@ name = "rockdove2Jade";
 mkdir("data1/" + name);
 mkdir("data1/" + name + "/geometry");
 mkdir("data1/" + name + "/render");
+mkdir("data1/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = rockdove(20.0, 4.0, 0.582, 0.03);
     writematrix(xyvals, "data1/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -31,6 +33,7 @@ name = "rockdove3Sea";
 mkdir("data1/" + name);
 mkdir("data1/" + name + "/geometry");
 mkdir("data1/" + name + "/render");
+mkdir("data1/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = rockdove(20.0, 4.0, 0.569, 0.03);
     writematrix(xyvals, "data1/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -44,6 +47,7 @@ name = "rockdove4Teal";
 mkdir("data1/" + name);
 mkdir("data1/" + name + "/geometry");
 mkdir("data1/" + name + "/render");
+mkdir("data1/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = rockdove(20.0, 4.0, 0.556, 0.03);
     writematrix(xyvals, "data1/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -57,6 +61,7 @@ name = "rockdove5Violet";
 mkdir("data1/" + name);
 mkdir("data1/" + name + "/geometry");
 mkdir("data1/" + name + "/render");
+mkdir("data1/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = rockdove(20.0, 4.0, 0.543, 0.03);
     writematrix(xyvals, "data1/" + name + "/geometry/xyvals" + num2str(n) + ".txt");
@@ -70,6 +75,7 @@ name = "rockdove6Purple";
 mkdir("data1/" + name);
 mkdir("data1/" + name + "/geometry");
 mkdir("data1/" + name + "/render");
+mkdir("data1/" + name + "/visual");
 for n = 1 : 50
     [xyvals, info, mRatio] = rockdove(20.0, 4.0, 0.530, 0.03);
     writematrix(xyvals, "data1/" + name + "/geometry/xyvals" + num2str(n) + ".txt");

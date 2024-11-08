@@ -3,22 +3,21 @@
 #include "WaveSim.h"
 
 int main(int argc, char **argv) {
-    int opt, dim, iTheta, iPhi, type, nInstance, resolution1, resolution2;
+    int opt, iTheta, iPhi, type, nInstance, visualize;
     double lambda;
     string xyname;
-    while ((opt = getopt(argc, argv, "a:b:c:i:l:n:r:s:z:")) != -1) {
+    while ((opt = getopt(argc, argv, "a:b:i:l:n:v:z:")) != -1) {
         switch (opt) {
-            case 'a': dim = atoi(optarg); break;
-            case 'b': iTheta = atoi(optarg); break;
-            case 'c': iPhi = atoi(optarg); break;
+            case 'a': iTheta = atoi(optarg); break;
+            case 'b': iPhi = atoi(optarg); break;
             case 'i': type = atoi(optarg); break;
             case 'l': lambda = atof(optarg) * 0.001; break;
             case 'n': nInstance = atoi(optarg); break;
-            case 'r': resolution1 = atoi(optarg); break;
-            case 's': resolution2 = atoi(optarg); break;
+            case 'v': visualize = atoi(optarg); break;
             case 'z': xyname = optarg; break;
         }
     }
+    int dim = 20, resolution1 = 400, resolution2 = 1024;
     double theta = acos(1.0 / dim * iTheta);
     double phi = acos(1.0 / dim * iPhi);
     MatrixXd photonics, melaninRatio, regularity;
@@ -46,18 +45,28 @@ int main(int argc, char **argv) {
     // Compute the mean BRDF parameters and field value statistics
     int index = dim * (iTheta - 1) + iPhi;
     brdf->computeParameters(theta, phi);
-    VectorXd parameters = VectorXd::Zero(12);
-    parameters(0) = brdf->m1;
-    parameters(1) = brdf->phi1;
-    parameters.block(2, 0, 3, 1) = brdf->f1;
-    parameters(5) = brdf->m2;
-    parameters(6) = brdf->phi2;
-    parameters.block(7, 0, 3, 1) = brdf->f2;
-    parameters(10) = brdf->rate;
-    parameters(11) = brdf->l;
-    writeData("data" + to_string(type) + "/" + xyname + "/render/param_" + to_string((int)round(1000 * lambda)) + "_" + to_string(index) + ".binary", parameters);
-    if (index == dim * dim && lambda < 0.405)
-        writeData("data" + to_string(type) + "/" + xyname + "/render/noise.binary", brdf->noise);
+    if (visualize == 0) {
+        VectorXd parameters = VectorXd::Zero(12);
+        parameters(0) = brdf->m1;
+        parameters(1) = brdf->phi1;
+        parameters.block(2, 0, 3, 1) = brdf->f1;
+        parameters(5) = brdf->m2;
+        parameters(6) = brdf->phi2;
+        parameters.block(7, 0, 3, 1) = brdf->f2;
+        parameters(10) = brdf->rate;
+        parameters(11) = brdf->l;
+        writeData("data" + to_string(type) + "/" + xyname + "/render/param_" + to_string((int)round(1000 * lambda)) + "_" + to_string(index) + ".binary", parameters);
+        if (index == dim * dim && lambda < 0.405)
+            writeData("data" + to_string(type) + "/" + xyname + "/render/noise.binary", brdf->noise);
+    } else {
+        MatrixXf visual = MatrixXf::Zero(resolution1, 5);
+        visual.block(0, 0, resolution1, 1) = brdf->brdf_sim;
+        visual.block(0, 1, resolution1, 1) = brdf->brdf_fit;
+        visual.block(0, 2, resolution1, 1) = 0.5f * brdf->data1.block(0, 0, resolution1, 1) + 0.5f * brdf->data1.block(0, 7, resolution1, 1);
+        visual.block(0, 3, resolution1, 1) = 0.5f * brdf->data1.block(0, 14, resolution1, 1) + 0.5f * brdf->data1.block(0, 21, resolution1, 1);
+        visual.block(0, 4, resolution1, 1) = 0.5f * brdf->data1.block(0, 28, resolution1, 1) + 0.5f * brdf->data1.block(0, 35, resolution1, 1);
+        writeData("data" + to_string(type) + "/" + xyname + "/visual/pattern_" + to_string((int)round(1000 * lambda)) + "_" + to_string(index) + ".binary", visual);
+    }
     delete geom;
     delete sim;
     delete brdf;

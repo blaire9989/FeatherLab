@@ -1,7 +1,7 @@
 ### BRDF Generation Pipeline
 This directory contains a collection of $\texttt{MATLAB}$ functions, $\texttt{MATLAB}$ scripts, and stored data used for processing and compressing our simulation results, to be used for rendering.
 
-Among the functions / scripts in this directory, we have introduced the $\texttt{viewPattern.m}$ function in our previous tutorial. This function serves to help us visualize some example scattering patterns that come from our 2.5D simulations.
+Among the functions / scripts in this directory, we have introduced the $\texttt{viewPattern.m}$ function in our previous tutorial. This function serves to help us visualize some example 1D scattering patterns that come from our 2.5D simulations.
 
 The other $\texttt{MATLAB}$ functions and scripts serve to process and compress the BRDF parameters computed from wave simulations, assuming that the user has run all the $20 \times 20 \times 50$ sets of simulations for complete characterization of a type of barbule, as described in the previous tutorial. Upon finishing all these simulations, users can first move the $\texttt{dataX}$ ($X = 1, 2, 3, 4, 5, 6, 7$) into the current $\texttt{3-BRDF}$ directory.
 

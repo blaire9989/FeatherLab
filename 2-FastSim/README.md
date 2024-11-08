@@ -15,4 +15,4 @@ Our wave simulation program takes the following command line arguments:
 
 $\texttt{-a}$: Specifies the $\theta_i$ parameter that describes the incident direction (see our paper for the definition of $\theta_i$). In our framework, **this parameter must be an integer between 1 and 20**, and we have $\cos \theta_i = 0.05a$.
 
-$\texttt{-b}$: Specifies the $\phi_i$ parameter that describes the incident direction (see our paper for the definition of $\phi_i$). In our framework, **this parameter must be an integer between 1 and 20**, and we have $\cos \phi_i = 0.05b$.
+$\texttt{-b}$: Specifies the $\phi_i$ parameter that describes the incident direction (see our paper for the definition of $\phi_i$). Here, **this parameter must be an integer between 1 and 20**, and we have $\cos \phi_i = 0.05b$.

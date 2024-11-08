@@ -3,3 +3,7 @@ This directory contains our fast, approximate wave simulation code that computes
 
 #### Input data
 All the input data to our simulations are in the folders $\texttt{data1}-\texttt{data7}$. In our framework, the easiest way to generate these data folders is running our provided $\texttt{MATLAB}$ scripts, $\texttt{rockdoveProduction.m}$, $\texttt{starlingProduction.m}$, $\texttt{bronzewingProduction.m}$, $\texttt{hummingbirdProduction.m}$, $\texttt{mallardProduction.m}$, $\texttt{magpieProduction.m}$, and $\texttt{peacockProduction.m}$. 
+
+By default, these scripts generate geometric models for multiple variants of each type of barbules---for instance, our $\texttt{data2}$ folder has 8 subfolders, representing European starling feathers of 8 different colors! Users should feel free to comment out different parts of the aforementioned $\texttt{MATLAB}$ scripts, to avoid generate barbules models they do not need. Users are also welcome to explore using different input geometric parameters to the $\texttt{MATLAB}$ functions.
+
+Upon generating the data folders $\texttt{data1}-\texttt{data7}$, users can simply move these folders to our current $\texttt{2-FastSim}$ directory (as where they are for the time being).

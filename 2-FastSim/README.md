@@ -47,3 +47,15 @@ done
 ```
 will generate 50 output files in the $\texttt{visual}$ sub-directory in the $\texttt{data1/rockdove1Forest}$ folder.
 
+Users can further verify their results by moving the entire $\texttt{data1}$ folder into the $\texttt{3-BRDF}$ directory and run the $\texttt{MATLAB}$ script:
+```
+load('D65.mat');
+a = 20;
+b = 20;
+colors = viewPattern(1, "rockdove1Forest", 20 * (a - 1) + b, D65);
+imshow(colors);
+```
+Users should expect to get an image that looks like the following:
+<p align="center">
+  <img src="https://github.com/blaire9989/FeatherLab/blob/main/3-BRDF/example.jpg" alt="gray" style="width:600px;"/>
+</p>

@@ -57,5 +57,5 @@ imshow(colors);
 ```
 Users should expect to get an image that looks like the following:
 <p align="center">
-  <img src="https://github.com/blaire9989/FeatherLab/blob/main/3-BRDF/example.jpg" alt="gray" style="width:600px;"/>
+  <img src="https://github.com/blaire9989/FeatherLab/blob/main/3-BRDF/example.jpg" alt="gray" style="width:300px;"/>
 </p>

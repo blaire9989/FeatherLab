@@ -36,3 +36,14 @@ running the following command
 ./main -a 20 -b 20 -i 1 -l 400 -n 50 -v 0 -z rockdove1Forest
 ```
 simulates the scattering of 50 green-colored rock dove barbules under normal incidence of 400nm wavelength light, and computes relevant BRDF parameters.
+
+#### Examples
+When trying out the simulation code for the first time, users are recommended to start from the trial mode: $v=1$. Running a small set of simulations in this mode can generate nice, visualizable scattering patterns from barbules. Users can try running the following commands to test the system:
+```
+for l in {400..694..6}
+do
+  ./main -a 20 -b 20 -i 1 -l ${l} -n 50 -v 0 -z rockdove1Forest
+done
+```
+will generate 50 output files in the $\texttt{visual}$ sub-directory in the $\texttt{data1/rockdove1Forest}$ folder.
+

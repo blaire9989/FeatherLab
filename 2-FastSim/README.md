@@ -1,14 +1,14 @@
 ### Approximate Wave Simulations on Barbules
-This directory contains our fast, approximate wave simulation code that computes scattering from different types of barbules. As verified with our full-wave simulations, our approximate simulation results are almost as accurate as the reference solutions, while the approximate methods gives rise to almost $1000 \times$ speedup.
+This directory contains our fast, approximate wave simulation code that computes scattering from different types of barbules. As verified with our full-wave simulations, our approximate simulation results are almost as accurate as the reference solutions, while the approximate method gives rise to almost $1000 \times$ speedup.
 
 #### Input Data
 All the input data to our simulations are in the folders $\texttt{data1}-\texttt{data7}$. In our framework, the easiest way to generate these data folders is running our provided $\texttt{MATLAB}$ scripts, $\texttt{rockdoveProduction.m}$, $\texttt{starlingProduction.m}$, $\texttt{bronzewingProduction.m}$, $\texttt{hummingbirdProduction.m}$, $\texttt{mallardProduction.m}$, $\texttt{magpieProduction.m}$, and $\texttt{peacockProduction.m}$. 
 
 By default, these scripts generate geometric models for multiple variants of each type of barbules; for instance, our $\texttt{data2}$ folder has 8 subfolders, representing European starling feathers of 8 different colors! Users should feel free to comment out different parts of the aforementioned $\texttt{MATLAB}$ scripts, to avoid generating barbules models they do not need. Users are also welcome to explore using different input geometric parameters to the $\texttt{MATLAB}$ functions.
 
-Upon generating the data folders $\texttt{data1}-\texttt{data7}$, users can simply move these folders to our current $\texttt{2-FastSim}$ directory (as where they are for the time being). Inspecting one of the subfolders named after a barbule (e.g. $\texttt{rockdove1Forest}$) reveals three or four sub-directories: $\texttt{geometry}$, $\texttt{render}$, $\texttt{visual}$, and an additional $\texttt{coefs}$ sub-directory that contains photonic crystal reflectivity tables for photonic-type barbules. 
+Upon generating the data folders $\texttt{data1}-\texttt{data7}$, users can simply move these folders to our current $\texttt{2-FastSim}$ directory (as where they are for the time being). Inspecting one of the subfolders named after a barbule (e.g. $\texttt{rockdove1Forest}$) reveals three or four sub-directories: $\texttt{geometry}$, $\texttt{render}$, $\texttt{visual}$, and an additional $\texttt{coefs}$ sub-directory that contains photonic crystal reflectivity tables for photonic-type barbules (see our paper).
 
-All the files containing the input geometric models are in the $\texttt{geometry}$ sub-directories, and these sub-directories in our repository already each contain geometric model files for 50 barbule instances (users are welcome to generate and use new ones). Moreover, the $\texttt{render}$ and $\texttt{visual}$ sub-directories are pregenerated to store the output files.
+All the files describing the input geometric models are in the $\texttt{geometry}$ sub-directories, and these sub-directories in our repository already each contain geometric model files for 50 barbule instances (users are welcome to generate and use new ones). Moreover, the $\texttt{render}$ and $\texttt{visual}$ sub-directories are pregenerated to store the output files.
 
 #### Command Line Arguments
 Our wave simulation program takes the following command line arguments:
@@ -35,7 +35,7 @@ running the following command
 ```
 ./main -a 20 -b 20 -i 1 -l 400 -n 50 -v 0 -z rockdove1Forest
 ```
-simulates the scattering of 50 green-colored rock dove barbules under normal incidence of 400nm wavelength light, and computes relevant BRDF parameters.
+simulates the scattering of 50 green-colored rock dove barbules under normal incidence of 400nm wavelength light and computes relevant BRDF parameters.
 
 #### Trial Mode
 When trying out the simulation code for the first time, users are recommended to start from the trial mode: $v=1$. Running a small set of simulations in this mode can generate nice, visualizable scattering patterns from barbules. Users can try running the following commands to test the system:
@@ -45,9 +45,9 @@ do
   ./main -a 20 -b 20 -i 1 -l ${l} -n 50 -v 1 -z rockdove1Forest
 done
 ```
-will generate 50 output files in the $\texttt{visual}$ sub-directory in the $\texttt{data1/rockdove1Forest}$ folder.
+This will generate 50 output files in the $\texttt{visual}$ sub-directory of the $\texttt{data1/rockdove1Forest}$ folder.
 
-Users can further verify their results by moving the entire $\texttt{data1}$ folder into the $\texttt{3-BRDF}$ directory and run the $\texttt{MATLAB}$ script:
+Users can further verify their results by moving the entire $\texttt{data1}$ folder into the $\texttt{3-BRDF}$ directory and running the $\texttt{MATLAB}$ script:
 ```
 load('D65.mat');
 a = 20;
@@ -76,6 +76,6 @@ do
   done
 done
 ```
-**However, users should NEVER attempt to run these commands on a single machine, as the underlying computations will take multiple days.** Users are instead recommended to submit jobs on a distributed cluster, such that these $20 \times 20 \times 50$ simulations run concurrently on many machines.
+**However, users should NEVER attempt to run these commands on a single machine, as the underlying computations will take multiple days.** Users are instead recommended to submit jobs on a distributed cluster, such that these $20 \times 20 \times 50$ simulation sets run concurrently on many machines.
 
-After the entire set of simulations terminates, users should expect to find 20000 BRDF parameters files in the $\texttt{render}$ sub-directory of the simulated barbule folder, as well as a file named $\texttt{noise.binary}$. These output files will be processed and compressed in the next stage of our appearance modeling pipeline, as discussed in the next tutorial.
+After all the simulations terminates, users should expect to find 20000 BRDF parameters files in the $\texttt{render}$ sub-directory of the simulated barbule folder, as well as a file named $\texttt{noise.binary}$. These output files will be processed and compressed in the next stage of our appearance modeling pipeline, as discussed in the next tutorial.

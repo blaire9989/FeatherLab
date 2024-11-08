@@ -23,6 +23,6 @@ $\texttt{-l}$: Selects the simulated wavelength. **This argument is passed as an
 
 $\texttt{-n}$: The number of instances simulated for each type barbule. We usually simulate 50 instances at a time.
 
-$\texttt{-v}$: A binary argument with the value of 0 or 1. When $v=0$, we are in the "material characterizing mode" and our output files will contain BRDF parameters (as described in our paper) used for rendering. When $v=1$, we are in the trial mode, and our output files can be processed to generate some example scattering patterns (see below).
+$\texttt{-v}$: A binary argument with the value of 0 or 1. When $v=0$, we are in the material characterizing mode and our output files will contain BRDF parameters (as described in our paper) used for rendering. When $v=1$, we are in the trial mode, and our output files can be processed to generate some example scattering patterns (see below).
 
 $\texttt{-z}$: The name of the simulated barbule, which needs to match the name of a subfolder in some $\texttt{dataX}$ folder. One example barbule name is $\texttt{rockdove1Forest}$.

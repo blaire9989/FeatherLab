@@ -42,7 +42,7 @@ When trying out the simulation code for the first time, users are recommended to
 ```
 for l in {400..694..6}
 do
-  ./main -a 20 -b 20 -i 1 -l ${l} -n 50 -v 0 -z rockdove1Forest
+  ./main -a 20 -b 20 -i 1 -l ${l} -n 50 -v 1 -z rockdove1Forest
 done
 ```
 will generate 50 output files in the $\texttt{visual}$ sub-directory in the $\texttt{data1/rockdove1Forest}$ folder.
@@ -63,7 +63,7 @@ Users should expect to get an image that looks like the following:
 The five sub-images above represent: the average scattering pattern (in RGB) from 50 rock dove barbules, the average scattering pattern fitted to an analytical form, and three individual scattering patterns from different BRDF instances. Each pattern that comes from our 2.5D simulation is a 1D function of the outgoing azimuthal angle $\phi_o$, as described in our paper, and in our framework we simulate a total of 400 outgoing azimuthal angles, uniformly distributed between $-90\degree$ and $90\degree$.
 
 #### Material Characterizing Mode
-For fully characterzing the scattering properties of one kind of barbule, users can simulate our generated barbule instances under all 50 wavelengths and 400 incident directions required in our system. Theoretically, this can be done by running our simulation commands in loops:
+For fully characterzing the scattering properties of one kind of barbule, users can simulate our generated barbule instances under all 50 wavelengths and 400 incident directions required in our system (and use $v = 0$). Theoretically, this can be done by running our simulation commands in loops:
 ```
 for a in {1..20..1}
 do

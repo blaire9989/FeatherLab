@@ -37,7 +37,7 @@ running the following command
 ```
 simulates the scattering of 50 green-colored rock dove barbules under normal incidence of 400nm wavelength light, and computes relevant BRDF parameters.
 
-#### Examples
+#### Trial Mode
 When trying out the simulation code for the first time, users are recommended to start from the trial mode: $v=1$. Running a small set of simulations in this mode can generate nice, visualizable scattering patterns from barbules. Users can try running the following commands to test the system:
 ```
 for l in {400..694..6}
@@ -59,3 +59,5 @@ Users should expect to get an image that looks like the following:
 <p align="center">
   <img src="https://github.com/blaire9989/FeatherLab/blob/main/3-BRDF/example.jpg" alt="gray" style="width:300px;"/>
 </p>
+
+The five sub-images in the above image represent: the average scattering pattern (in RGB) from 50 rock dove barbules, the average scattering pattern fitted to an analytical form, and three individual scattering patterns from different BRDF instances. Each pattern that comes from our 2.5D simulation is a 1D function of the outgoing azimuthal angle $\phi_o$, as described in our paper, and currently we simulate a total of 400 outgoing azimuthal angles, uniformly distributed between $-90\degree$ and $90\degree$.

@@ -26,3 +26,13 @@ Our wave simulation program takes the following command line arguments:
 -v: A binary argument with the value of 0 or 1. When $v=0$, we are in the material characterizing mode and our output files will contain BRDF parameters (as described in our paper) used for rendering. When $v=1$, we are in the trial mode, and our output files can be processed to generate some example scattering patterns (see below).
 
 -z: The name of the simulated barbule, which needs to match the name of a subfolder in some $\texttt{dataX}$ folder. One example barbule name is $\texttt{rockdove1Forest}$.
+
+After building the wave simulation program using
+```
+make
+```
+running the following command
+```
+./main -a 20 -b 20 -i 1 -l 400 -n 50 -v 0 -z rockdove1Forest
+```
+simulates the scattering of 50 green-colored rock dove barbules under normal incidence of 400nm wavelength light, and computes relevant BRDF parameters.

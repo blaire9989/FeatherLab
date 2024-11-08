@@ -60,4 +60,22 @@ Users should expect to get an image that looks like the following:
   <img src="https://github.com/blaire9989/FeatherLab/blob/main/3-BRDF/example.jpg" alt="gray" style="width:300px;"/>
 </p>
 
-The five sub-images in the above image represent: the average scattering pattern (in RGB) from 50 rock dove barbules, the average scattering pattern fitted to an analytical form, and three individual scattering patterns from different BRDF instances. Each pattern that comes from our 2.5D simulation is a 1D function of the outgoing azimuthal angle $\phi_o$, as described in our paper, and currently we simulate a total of 400 outgoing azimuthal angles, uniformly distributed between $-90\degree$ and $90\degree$.
+The five sub-images above represent: the average scattering pattern (in RGB) from 50 rock dove barbules, the average scattering pattern fitted to an analytical form, and three individual scattering patterns from different BRDF instances. Each pattern that comes from our 2.5D simulation is a 1D function of the outgoing azimuthal angle $\phi_o$, as described in our paper, and in our framework we simulate a total of 400 outgoing azimuthal angles, uniformly distributed between $-90\degree$ and $90\degree$.
+
+#### Material Characterizing Mode
+For fully characterzing the scattering properties of one kind of barbule, users can simulate our generated barbule instances under all 50 wavelengths and 400 incident directions required in our system. Theoretically, this can be done by running our simulation commands in loops:
+```
+for a in {1..20..1}
+do
+  for b in {1..20..1}
+  do
+    for l in {400..694..6}
+    do
+      ./main -a ${a} -b ${b} -i 1 -l ${l} -n 50 -v 0 -z rockdove1Forest
+    done
+  done
+done
+```
+**However, users should NEVER attempt to run these commands on a single machine, as the underlying computations will take multiple days.** Users are instead recommended to submit jobs on a distributed cluster, such that these $20 \times 20 \times 50$ simulations run concurrently on many machines.
+
+After the entire set of simulations terminate, users should expect to find 20000 output files with names in the form of $\texttt{param_x_y.binary}$ in the $\texttt{render}$ sub-directory of the simulated barbule folder, as well as a file named $\texttt{noise.binary}$. These output files will be processed and compressed in the next stage of our appearance modeling pipeline, as discussed in the next tutorial.
